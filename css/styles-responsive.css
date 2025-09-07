@@ -1,0 +1,562 @@
+/* ===== レスポンシブデザイン・印刷・アクセシビリティ対応 ===== */
+/* このファイルは以下の機能を提供します: */
+/* - レスポンシブデザイン（タブレット・スマートフォン対応） */
+/* - 印刷用スタイル */
+/* - アクセシビリティ対応（高コントラスト、アニメーション削減等） */
+
+/* ===== タブレット対応（768px以下） ===== */
+@media (max-width: 768px) {
+    /* コンテナレイアウト調整 */
+    .container {
+        padding: var(--space-4);
+    }
+
+    /* ヘッダー調整 */
+    .header {
+        padding: var(--space-8) var(--space-4);
+        margin-bottom: var(--space-10);
+    }
+
+    .header-title {
+        font-size: var(--text-4xl);
+    }
+
+    .header-subtitle {
+        font-size: var(--text-lg);
+    }
+
+    .header-benefits {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-4);
+    }
+
+    /* プログレスバー調整 */
+    .progress-steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .step-label {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        min-height: auto;
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .step-number {
+        order: -1;
+        margin-right: var(--space-3);
+    }
+
+    /* カード調整 */
+    .card {
+        padding: var(--space-6);
+    }
+
+    /* ステップタイトル調整 */
+    .step-title {
+        font-size: var(--text-2xl);
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    /* ボタン配置調整 */
+    .step-buttons {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    /* ステップ情報調整 */
+    .step-info {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    /* 固定費・ライフイベント項目調整 */
+    .fixed-cost-item,
+    .life-event-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-5);
+    }
+
+    .cost-controls {
+        justify-content: center;
+    }
+
+    /* 誕生日入力調整 */
+    .birthday-input {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    /* 結果表示グリッド調整 */
+    .results-preview-grid,
+    .results-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* チャート表示調整 */
+    .chart-wrapper {
+        height: 300px;
+        padding: var(--space-4);
+    }
+
+    .chart-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-4);
+    }
+
+    /* レーティングバッジ調整 */
+    .rating-badge {
+        padding: var(--space-6) var(--space-10);
+        font-size: var(--text-4xl);
+    }
+
+    /* カスタムイベント項目調整 */
+    .custom-event-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
+    .custom-event-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* フォームアクション調整 */
+    .form-actions {
+        flex-direction: column;
+    }
+
+    /* ローディング画面調整 */
+    .loading-content {
+        padding: var(--space-8);
+    }
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* フッター調整 */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+}
+
+/* ===== スマートフォン対応（480px以下） ===== */
+@media (max-width: 480px) {
+    /* より小さいスクリーンに対する追加調整 */
+    .container {
+        padding: var(--space-3);
+    }
+
+    /* ヘッダータイトル更なる縮小 */
+    .header-title {
+        font-size: var(--text-3xl);
+    }
+
+    /* プログレス表示調整 */
+    .progress-container {
+        padding: var(--space-4);
+    }
+
+    .progress-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    /* カードパディング縮小 */
+    .card {
+        padding: var(--space-4);
+    }
+
+    /* 年金額表示の縦並び調整 */
+    .pension-value-display {
+        flex-direction: column;
+        gap: var(--space-3);
+        align-items: center;
+    }
+
+    /* レンジスライダーのラベル調整 */
+    .range-min,
+    .range-max {
+        min-width: auto;
+    }
+
+    /* フォント調整 */
+    .step-title {
+        font-size: var(--text-xl);
+    }
+
+    /* ボタンサイズ調整 */
+    .btn-primary,
+    .btn-secondary {
+        padding: var(--space-3) var(--space-5);
+        font-size: var(--text-sm);
+    }
+}
+
+/* ===== 大画面対応（1200px以上） ===== */
+@media (min-width: 1200px) {
+    /* コンテナ最大幅設定 */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* ヘッダー大画面対応 */
+    .header-title {
+        font-size: var(--text-6xl);
+    }
+
+    .header-subtitle {
+        font-size: var(--text-xl);
+    }
+
+    /* 結果グリッド拡張 */
+    .results-preview-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .results-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* チャート大画面対応 */
+    .chart-wrapper {
+        height: 600px;
+    }
+
+    /* フッター大画面レイアウト */
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===== フォーカス管理・アクセシビリティ ===== */
+/* キーボードナビゲーション時の視覚的フィードバック */
+.btn:focus-visible,
+.form-control:focus-visible,
+.step-label:focus-visible,
+.tooltip-trigger:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* インタラクティブ要素のフォーカス状態 */
+.toggle-switch input:focus-visible + .toggle-label::after {
+    box-shadow: 0 0 0 2px var(--color-primary-500);
+}
+
+.range-slider:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+}
+
+/* セレクトボックスのフォーカス状態 */
+.form-select:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: -2px;
+    border-color: var(--color-primary-500);
+}
+
+/* チェックボックス・ラジオボタンのフォーカス状態 */
+.form-check-input:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+}
+
+/* ===== 印刷スタイル ===== */
+@media print {
+    /* 印刷時に不要な要素を非表示 */
+    .step-navigation,
+    .loading,
+    .tooltip,
+    .btn,
+    .header-benefits,
+    .progress-container {
+        display: none !important;
+    }
+    
+    /* 印刷用の基本設定 */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    /* カードの印刷対応 */
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        background: white !important;
+        page-break-inside: avoid;
+    }
+    
+    /* ヘッダーの印刷対応 */
+    .header {
+        background: white !important;
+        border-bottom: 2px solid #000;
+        margin-bottom: 20pt;
+    }
+    
+    .header-title {
+        color: black !important;
+        font-size: 18pt;
+    }
+    
+    .header-subtitle {
+        color: black !important;
+        font-size: 12pt;
+    }
+    
+    /* チャートの印刷対応 */
+    .chart-wrapper {
+        height: 200pt !important;
+        border: 1px solid #000 !important;
+        background: white !important;
+    }
+    
+    /* テーブルの印刷対応 */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    table th,
+    table td {
+        border: 1px solid #000;
+        padding: 8pt;
+        text-align: left;
+    }
+    
+    /* ページ区切り制御 */
+    .step-section {
+        page-break-before: auto;
+        page-break-after: auto;
+        page-break-inside: avoid;
+    }
+    
+    /* 見出しの印刷対応 */
+    h1, h2, h3, h4, h5, h6 {
+        color: black !important;
+        page-break-after: avoid;
+    }
+    
+    /* フッターの印刷対応 */
+    .footer {
+        border-top: 1px solid #000;
+        margin-top: 30pt;
+    }
+}
+
+/* ===== アニメーション削減設定 ===== */
+/* ユーザーがアニメーションを削減を希望する場合の対応 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    /* プログレスバーのアニメーション削除 */
+    .progress-bar {
+        transition: none !important;
+    }
+    
+    /* ローディングスピナーの調整 */
+    .spinner {
+        animation: none !important;
+    }
+    
+    .spinner::after {
+        content: "読み込み中...";
+        display: block;
+        text-align: center;
+        color: var(--color-text-secondary);
+    }
+}
+
+/* ===== ハイコントラスト対応 ===== */
+/* 高コントラストモードを希望するユーザーへの対応 */
+@media (prefers-contrast: high) {
+    :root {
+        /* 高コントラスト用のカラー設定 */
+        --color-surface: #ffffff;
+        --color-background: #ffffff;
+        --color-text-primary: #000000;
+        --color-text-secondary: #000000;
+        --color-primary-500: #0000ff;
+        --color-success-500: #008000;
+        --color-warning-500: #ff8000;
+        --color-error-500: #ff0000;
+        --color-border: #000000;
+        --color-border-focus: #0000ff;
+        --shadow-base: none;
+        --shadow-lg: none;
+    }
+    
+    /* ボタンの高コントラスト対応 */
+    .btn {
+        border-width: 3px !important;
+        font-weight: var(--font-bold);
+    }
+    
+    .btn-primary {
+        background: #0000ff !important;
+        color: #ffffff !important;
+        border-color: #000000 !important;
+    }
+    
+    .btn-secondary {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #000000 !important;
+    }
+    
+    /* フォーム要素の高コントラスト対応 */
+    .form-control {
+        border-width: 3px !important;
+        border-color: #000000 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+    
+    .form-control:focus {
+        border-color: #0000ff !important;
+        box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.3) !important;
+    }
+    
+    /* カードの高コントラスト対応 */
+    .card {
+        border: 3px solid #000000 !important;
+        background: #ffffff !important;
+        box-shadow: none !important;
+    }
+    
+    /* リンクの高コントラスト対応 */
+    a {
+        color: #0000ff !important;
+        text-decoration: underline !important;
+    }
+    
+    a:visited {
+        color: #800080 !important;
+    }
+    
+    a:hover,
+    a:focus {
+        color: #ff0000 !important;
+        text-decoration: underline !important;
+    }
+}
+
+/* ===== カラースキーム対応 ===== */
+/* ダークモード設定（システムの設定に応じて自動切換え） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* ダークモード用のカラー変数 */
+        --color-background: #0f172a;
+        --color-surface: #1e293b;
+        --color-surface-raised: #334155;
+        --color-surface-hover: #475569;
+        
+        --color-text-primary: #f8fafc;
+        --color-text-secondary: #e2e8f0;
+        --color-text-tertiary: #cbd5e1;
+        --color-text-muted: #94a3b8;
+        
+        --color-border: #475569;
+        --color-border-light: #334155;
+        --color-border-medium: #64748b;
+        --color-border-strong: #94a3b8;
+    }
+    
+    /* ダークモード用の追加スタイル調整 */
+    .card {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+    }
+    
+    .form-control {
+        background: var(--color-surface-raised);
+        border-color: var(--color-border);
+        color: var(--color-text-primary);
+    }
+    
+    .form-control::placeholder {
+        color: var(--color-text-muted);
+    }
+}
+
+/* ===== ズーム対応 ===== */
+/* ブラウザのズーム機能や文字サイズ変更への対応 */
+@media (min-resolution: 1.5dppx) {
+    /* 高解像度ディスプレイ対応 */
+    .btn,
+    .form-control {
+        border-width: 0.5px;
+    }
+}
+
+/* 文字サイズ大きめ設定への対応 */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* ランドスケープモードでの調整 */
+    .header {
+        padding: var(--space-4) var(--space-4);
+    }
+    
+    .progress-container {
+        padding: var(--space-3);
+    }
+    
+    .card {
+        padding: var(--space-4);
+    }
+}
+
+/* ===== 特殊なアクセシビリティ対応 ===== */
+/* スクリーンリーダー用の隠しテキスト */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* フォーカス時に表示される要素 */
+.sr-only:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: var(--space-2) var(--space-4) !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+    background: var(--color-primary-500) !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: var(--radius-base) !important;
+}
+
+/* ===== エンドオブファイル ===== */
+/* styles-responsive.css - レスポンシブ・印刷・アクセシビリティ対応モジュール完了 */
